@@ -76,10 +76,9 @@ void Afsk1200Win::process_samples(float *buffer, int length)
 
     /* clear tmpbuf and store "overlap" */
     tmpbuf.clear();
-    for (i = length-overlap; i < length; i++) {
+    for (i = qMax(length-overlap, 0); i < length; i++) {
         tmpbuf.append(buffer[i]);
     }
-
 }
 
 
